@@ -1,7 +1,44 @@
-<h2>test timeline</h2>
+<!--<h2 xmlns="http://www.w3.org/1999/html">cartlist from timeline </h2>
 
-<div *ngIf="timeline">
-  <h3>{{ timeline.id }}</h3>
-  <h4>{{ timeline.name}}</h4>
+<div >
+  {{timeline?.cardList | json}}
+</div>
+
+<h2>cartes à jouer</h2>
+
+<div >
+{{cardsToPlay | json}}
+  </div >-->
+<form #userForm="ngForm" (ngSubmit)="onTrySubmit(userForm)">
+  <div class="try">
+    <label>entrez la date: </label>
+    <input type="number"
+    ngModel
+    name="try"
+    id="try"
+    class="form-control">
+    <button class = "try" > Essayer </button>
 
   </div>
+</form>
+
+<h2>carte à deviner: {{currentCard?.id | json}}</h2>
+<section id="currentCard" >
+
+  <p>{{currentCard?.name | json}}</p>
+  <img src="{{currentCard?.imageUrl}}" >
+  <p>{{currentCard?.description | json}}</p>
+</section>
+
+<h2>cartes trouvées</h2>
+<section id="sortCards">
+  <div *ngFor="let Card of cardsPlayed ">
+    <section id="playedCard" >
+      <p>{{Card?.name | json}}</p>
+    <img src="{{Card?.imageUrl}}" >
+    <p>{{Card?.description | json}}</p>
+      <p>{{Card?.date | json}}</p>
+  </section>
+  </div>
+</section>
+

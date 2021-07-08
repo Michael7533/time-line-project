@@ -7,21 +7,31 @@ import { TimelineListComponent } from './timeline-list/timeline-list.component';
 import {RouterModule} from "@angular/router";
 import { AddTimelineComponent } from './add-timeline/add-timeline.component';
 import { playTimelineComponent } from './play-timeline/play-timeline.component';
+import {TimelineService} from "./timeline-service";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { EditTimelineComponent } from './edit-timeline/edit-timeline.component';
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: TimelineListComponent },
-      { path: 'play/:timelineId', component: playTimelineComponent },
-    ])
+      {path: '', component: TimelineListComponent},
+      {path: 'play/:timelineId', component: playTimelineComponent},
+      {path: 'edit/:timelineId', component: EditTimelineComponent}
+    ]),
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     TimelineListComponent,
     AddTimelineComponent,
-    playTimelineComponent
+    playTimelineComponent,
+    EditTimelineComponent,
+
   ],
   bootstrap: [
     AppComponent

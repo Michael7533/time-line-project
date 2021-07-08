@@ -1,0 +1,33 @@
+#currentCard {
+
+  width: 150px;
+  height: 300px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: solid;
+  background-color: #9ed3ee;
+  text-align: center;
+  border-radius: 15px;
+  font-family: cursive;
+}
+#playedCard{
+
+  width: 150px;
+  height: 300px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: solid;
+  background-color: #aaee9e;
+  text-align: center;
+  border-radius: 15px;
+  font-family: cursive;
+
+}
+img {
+  border-radius: 8px;
+
+  width: 100px;
+}
+ #sortCards{
+   display: flex;
+ }
