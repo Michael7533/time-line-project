@@ -46,7 +46,9 @@ export class playTimelineComponent implements OnInit {
     //this.cardsToPlay = this.timeline?.cardList
     this.timelineService.getCardList(timelineIdFromRoute).subscribe(
       cardList => {this.cardsToPlay=cardList;
-        this.currentCard = this.cardsToPlay.find(card => card.id === this.currentCardId)
+        this.cardsToPlay.sort(()=> Math.random() -0.5);
+        // @ts-ignore
+        this.currentCard = this.cardsToPlay[0];
       }
     )
 
@@ -92,7 +94,10 @@ export class playTimelineComponent implements OnInit {
             // @ts-ignore
             this.currentCardId++
             // @ts-ignore
-            this.currentCard = this.cardsToPlay.find(card => card.id === this.currentCardId)
+            //this.currentCard = this.cardsToPlay.find(card => card.id === this.currentCardId)
+            this.cardsToPlay.shift();
+            // @ts-ignore
+            this.currentCard = this.cardsToPlay[0]
             console.log("bravo")
 
 

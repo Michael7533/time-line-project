@@ -19,7 +19,8 @@ import { EditTimelineComponent } from './edit-timeline/edit-timeline.component';
     RouterModule.forRoot([
       {path: '', component: TimelineListComponent},
       {path: 'play/:timelineId', component: playTimelineComponent},
-      {path: 'edit/:timelineId', component: EditTimelineComponent}
+      {path: 'edit/:timelineId', component: EditTimelineComponent},
+      {path: 'add', component: AddTimelineComponent}
     ]),
     ReactiveFormsModule,
     FormsModule

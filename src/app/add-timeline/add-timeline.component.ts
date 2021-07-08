@@ -10,6 +10,15 @@ export class AddTimelineComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
+  // @ts-ignore
+  onSaveTimeLine(userForm:ngForm){
+
+    console.log(userForm.value.name);
+    console.log(userForm.value.date);
+    console.log(userForm)
+    
+
+  }
 }

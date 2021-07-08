@@ -30,4 +30,5 @@ img {
 }
  #sortCards{
    display: flex;
+   flex-wrap: wrap ;
  }

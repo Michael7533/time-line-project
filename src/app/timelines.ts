@@ -5,7 +5,7 @@ export interface Timelines {
   name: string;
   creationDate: Date;
   updateDate: Date;
-  //category: string;
+  category: string;
   cardList : Card[];
 
 

@@ -1,1 +1,27 @@
-<p>add-timeline works!</p>
+<h3>Ajouter une timeline</h3>
+
+
+<form #userForm="ngForm" (ngSubmit)="onSaveTimeLine(userForm)">
+  <div class="save">
+    <label>Nom de la timeline </label>
+    <input type="texte"
+           ngModel
+           name="name"
+           id="name"
+           class="form-control">
+    <label>Date de création de la timeline </label>
+    <input type="date"
+           ngModel
+           name="date"
+           id="date"
+           class="form-control">
+    <label>Catégorie </label>
+    <input type="text"
+           ngModel
+           name="category"
+           id="category"
+           class="form-control">
+    <button class = "category" > Essayer </button>
+
+  </div>
+</form>
