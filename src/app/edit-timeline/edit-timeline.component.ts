@@ -25,8 +25,6 @@ export class EditTimelineComponent implements OnInit {//timeline : Timelines | u
     private route: ActivatedRoute,
 
 
-    //  private http: HttpClient,
-
   ) { }
 
   ngOnInit(){
@@ -40,44 +38,25 @@ export class EditTimelineComponent implements OnInit {//timeline : Timelines | u
     // @ts-ignore
     console.log((this.timeline))
 
-    //this.cardsToPlay = this.timeline?.cardList
+    // get the cardList for the timeline
     this.timelineService.getCardList(timelineIdFromRoute).subscribe(
       cardList => {this.cardsToPlay=cardList;
         this.currentCard = this.cardsToPlay.find(card => card.id === this.currentCardId)
       }
     )
 
-    // @ts-ignore
-    //this.currentCard = this.cardsToPlay.find(card => card.id === this.currentCardId)
-    // @ts-ignore
-    //this.cardsToPlay.slice(0)
-
-    console.log(this.currentCard?.id)
-
-    // @ts-ignore
-    /*this.cardsPlayed = [{
-      id: 2,
-      name: 'twitter',
-      date: new Date('2019-12-12'),
-      //timelineId : 1,
-      description: 'c est quand que',
-    }]*/
-
-    // @ts-ignore
-
-    /*this.cardsPlayed.push(this.currentCard)*/
-
 
   }
+
+  // test the date
+
   // @ts-ignore
   onTrySubmit(userForm:NgForm){
-    console.log(userForm.value.try);
-    // try = this.currentCard?.date
-    // @ts-ignore
-    console.log(new Date (this.currentCard?.date).getFullYear())
+
     // @ts-ignore
     if(userForm.value.try== new Date (this.currentCard?.date).getFullYear())
-    { // @ts-ignore
+    { 
+      // @ts-ignore
       this.cardsPlayed.push(this.currentCard)
       // @ts-ignore
       this.cardsPlayed.sort(function (c1,c2){
