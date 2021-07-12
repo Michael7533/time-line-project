@@ -14,16 +14,34 @@ export class TimelineService {
   constructor(private http: HttpClient) {
   }
 
+  // to get all timelines
+
   getTimelineList() {
     return this.http.get<Timelines[]>(this.baseAPIUrl)
   }
+
+  // to get all cards for a timeline
 
   getCardList(timelineId : number){
     return this.http.get<Card[]>(this.baseAPIUrl+ '/' + timelineId + '/card' )
     }
 
-    /*deleteTimeline()
-  { return this.http.delete(this.baseAPIUrl+'/'+ this.timelineId)}
+  // to add a new timeline
 
-*/
+  PostNewTimeline (newTimeline: Timelines){
+      // @ts-ignore
+     return this.http.post(this.baseAPIUrl, newTimeline).subscribe()
+    }
+
+    // delete a timeline
+
+    deleteTimeline(timelineId: number) {
+    
+    
+    this.http.delete(this.baseAPIUrl+'/'+ timelineId).subscribe()
+  }
+  
+    // @ts-ignore
+  
+    
 }

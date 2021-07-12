@@ -10,19 +10,21 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./timeline-list.component.css']
 })
 export class TimelineListComponent {
-  //timelines=timelines;
+
   timelines=this.timelineService.getTimelineList();
   baseAPIUrl = 'http://localhost:8080/api/timeline';
   private timeline: any;
-  //cardsNb = this.timeline.cardList.length
+
 
   constructor(private timelineService : TimelineService,
               private http: HttpClient) {
  }
- /* deleteTimeline(timeline:any){
-  console.log("timeline supprimée")
-  }*/
+
   deleteTimeline(timelineId: number) {
+    // @ts-ignore
+    this.timeline = timelines.find(timeline => timeline.id === timelineId)
+    
+    //then, delete timeline whith empty cardlist
 
     this.http.delete(this.baseAPIUrl+'/'+ timelineId).subscribe()
   }

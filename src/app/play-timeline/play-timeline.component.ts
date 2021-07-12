@@ -27,9 +27,6 @@ export class playTimelineComponent implements OnInit {
       private timelineService : TimelineService,
       private route: ActivatedRoute,
 
-
-  //  private http: HttpClient,
-
   ) { }
 
   ngOnInit(){
