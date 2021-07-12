@@ -18,6 +18,8 @@ export class EditTimelineComponent implements OnInit {//timeline : Timelines | u
   cardsPlayed : Card[] | undefined =[]
   currentCard : Card | undefined;
   timeline: any | undefined;
+  baseAPIUrl = 'http://localhost:8080/api/timeline';
+  http: any;
   constructor(
     private timelineService : TimelineService,
     private route: ActivatedRoute,
@@ -95,5 +97,12 @@ export class EditTimelineComponent implements OnInit {//timeline : Timelines | u
 
 
   }
+  // @ts-ignore
 
+  deleteCardOnClick(cardId){
+      console.log("je supprime que dalle")
+      //this.http.delete('http://localhost:8080/api/timeline/1/card/2').subscribe()
+  }
 }
+
+

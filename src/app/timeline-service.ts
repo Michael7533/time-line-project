@@ -9,6 +9,7 @@ import {Card} from "./cards";
 export class TimelineService {
 
   baseAPIUrl = 'http://localhost:8080/api/timeline';
+
   //timelineId = 1;
 
   constructor(private http: HttpClient) {
@@ -22,26 +23,30 @@ export class TimelineService {
 
   // to get all cards for a timeline
 
-  getCardList(timelineId : number){
-    return this.http.get<Card[]>(this.baseAPIUrl+ '/' + timelineId + '/card' )
-    }
+  getCardList(timelineId: number) {
+    return this.http.get<Card[]>(this.baseAPIUrl + '/' + timelineId + '/card')
+  }
 
   // to add a new timeline
 
-  PostNewTimeline (newTimeline: Timelines){
-      // @ts-ignore
-     return this.http.post(this.baseAPIUrl, newTimeline).subscribe()
-    }
-
-    // delete a timeline
-
-    deleteTimeline(timelineId: number) {
-    
-    
-    this.http.delete(this.baseAPIUrl+'/'+ timelineId).subscribe()
-  }
-  
+  PostNewTimeline(newTimeline: Timelines) {
     // @ts-ignore
-  
-    
+    return this.http.post(this.baseAPIUrl, newTimeline).subscribe()
+  }
+
+  // delete a timeline
+
+  deleteTimeline(timelineId: number) {
+
+
+    this.http.delete(this.baseAPIUrl + '/' + timelineId).subscribe()
+  }
+
+  deleteCard(cardId: number) {
+
+
+    this.http.delete(this.baseAPIUrl + '/' + cardId+'/card').subscribe()
+
+
+  }
 }

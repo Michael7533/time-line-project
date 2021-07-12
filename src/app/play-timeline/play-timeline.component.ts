@@ -45,7 +45,9 @@ export class playTimelineComponent implements OnInit {
       cardList => {this.cardsToPlay=cardList;
         this.cardsToPlay.sort(()=> Math.random() -0.5);
         // @ts-ignore
-        this.currentCard = this.cardsToPlay[0];
+
+
+         this.currentCard = this.cardsToPlay[0];
       }
     )
 
@@ -94,12 +96,25 @@ export class playTimelineComponent implements OnInit {
             //this.currentCard = this.cardsToPlay.find(card => card.id === this.currentCardId)
             this.cardsToPlay.shift();
             // @ts-ignore
-            this.currentCard = this.cardsToPlay[0]
-            console.log("bravo")
+            if (this.cardsToPlay.lengh ==0) {this.currentCard= [{
+              id: 2,
+              name: 'BRAVO',
+              date: new Date('2019-12-12'),
+              //timelineId : 1,
+              description: 'Tu as terminé!',
+            }]}
+
+            else { // @ts-ignore
+              this.currentCard = this.cardsToPlay[0];}
+            console.log("bravo");
+            userForm.resetForm()
 
 
           }
-
+           else {
+             window.alert("c'est faux!");
+            userForm.resetForm()
+    }
 
   }
 

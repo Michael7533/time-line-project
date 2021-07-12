@@ -11,6 +11,7 @@ import {TimelineService} from "./timeline-service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { EditTimelineComponent } from './edit-timeline/edit-timeline.component';
+import { EditCardComponent } from './edit-card/edit-card.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { EditTimelineComponent } from './edit-timeline/edit-timeline.component';
       {path: '', component: TimelineListComponent},
       {path: 'play/:timelineId', component: playTimelineComponent},
       {path: 'edit/:timelineId', component: EditTimelineComponent},
-      {path: 'add', component: AddTimelineComponent}
+      {path: 'add', component: AddTimelineComponent},
+      {path: 'cardEdit/:cardId', component: EditCardComponent},
     ]),
     ReactiveFormsModule,
     FormsModule
@@ -32,6 +34,7 @@ import { EditTimelineComponent } from './edit-timeline/edit-timeline.component';
     AddTimelineComponent,
     playTimelineComponent,
     EditTimelineComponent,
+    EditCardComponent,
 
   ],
   bootstrap: [

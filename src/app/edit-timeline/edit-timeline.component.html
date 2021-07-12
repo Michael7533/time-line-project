@@ -1,11 +1,10 @@
-<h3> Détails du timeline </h3>
+<h1> Détails du timeline "{{timeline.name}}" </h1>
 
 <form #userForm="ngForm" (ngSubmit)="onTrySubmit(userForm)">
   <div class="try">
     <label>Nom de la timeline </label>
     <input type="text"
-           value="pourquoi ça ne marche pas?"
-           ngModel
+           [(ngModel)]="timeline.name"
            name="name"
            id="name"
            class="form-control">
@@ -41,10 +40,14 @@
     <td>{{Card.id}}</td>
     <td>{{Card.name}}</td>
     <td>{{Card.date}}</td>
-    <td>{{Card.imageUrl}}</td>
+    <td><img src="{{Card.imageUrl}}"></td>
     <td>{{Card.description}}</td>
-    <td>editer</td>
-    <td>supprimer</td>
+    <td><a [title]="Card.name + ' Editer'"[routerLink]="['/cardEdit', Card.id]">
+      {{ Card.name }}
+    </a></td>
+    <td><button (click) = "deleteCardOnClick(Card.id)">
+    Supprimer!
+  </button></td>
   </tr>
   </thead>
 </section>
